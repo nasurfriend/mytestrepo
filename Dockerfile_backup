@@ -1,0 +1,7 @@
+FROM openjdk:12-alpine
+
+COPY target/demo.war tmp/demo.war
+COPY target/demo.war /tmp/demo.war
+EXPOSE 8085
+ENV MY_ENV=1
+ENTRYPOINT ["java", "-jar","/tmp/demo.war"]
